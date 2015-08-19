@@ -144,6 +144,7 @@
 * 	2007-12-23 - 3.1.01 - Terminating message by WS without interface or service definition was removed
 * 						  (seems to be a correct state)
 * 	2008-08-20 - 3.1.02 - Woden-214: Anti-recursion bypassed in xsd:choice element
+* 	2015-08-19 - @todvora: extracted css styles, rendering only a body instead of the whole HTML page
 * ====================================================================
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -215,538 +216,6 @@
     End of included transformation: wsdl-viewer-global.xsl
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -->
-
-
-
-<!--
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    Begin of included transformation: wsdl-viewer-css.xsl
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
--->
-<xsl:variable name="css">
-
-/**
-	wsdl-viewer.css
-*/
-
-/**
-=========================================
-	Body
-=========================================
-*/
-html {
-	background-color: teal;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	height: auto;
-	color: white;
-	background-color: teal;
-	font: normal 80%/120% Arial, Helvetica, sans-serif;
-}
-
-#outer_box {
-	padding: 3px 3px 3px 194px;
-}
-
-#inner_box {
-	width: auto;
-	background-color: white;
-	color: black;
-	border: 1px solid navy;
-}
-
-/**
-=========================================
-	Fixed box with links
-=========================================
-*/
-#outer_links { 
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	margin: 3px;
-	padding: 1px;
-	z-index: 200; 
-	width: 180px;
-	height: auto;
-	background-color: gainsboro;
-	padding-top: 2px;
-	border: 1px solid navy;
-}
-
-* html #outer_links /* Override above rule for IE */ 
-{ 
-	position: absolute; 
-	width: 188px;
-	top: expression(offsetParent.scrollTop + 0); 
-} 
-
-#links {
-	margin: 1px;
-	padding: 3px;
-	background-color: white;
-	height: 350px;
-	overflow: auto;
-	border: 1px solid navy;
-}
-
-#links ul {
-	left: -999em;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	z-index: 100;
-}
-
-#links li {
-	margin: 0;
-	padding: 2px 4px;
-	width: auto;
-	z-index: 100;
-}
-
-#links ul li {
-	margin: 0;
-	padding: 2px 4px;
-	width: auto;
-	z-index: 100;
-}
-
-#links a {
-	display: block;
-	padding: 0 2px;
-	color: blue;
-	width: auto;
-	border: 1px solid white;
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-#links a:hover {
-	color: white;
-	background-color: gray;
-	border: 1px solid gray;
-} 
-
-
-/**
-=========================================
-	Navigation tabs
-=========================================
-*/
-
-#outer_nav {
-	background-color: yellow;
-	padding: 0;
-	margin: 0;
-}
-
-#nav {
-	height: 100%;
-	width: auto;
-	margin: 0;
-	padding: 0;
-	background-color: gainsboro;
-	border-top: 1px solid gray;
-	border-bottom: 3px solid gray;
-	z-index: 100;
-	font: bold 90%/120% Arial, Helvetica, sans-serif;
-	letter-spacing: 2px;
-} 
-
-#nav ul { 
-	background-color: gainsboro;
-	height: auto;
-	width: auto;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	z-index: 100;
-
-	border: 1px solid silver; 
-	border-top-color: black; 
-	border-width: 1px 0 9px; 
-} 
-
-#nav li { 
-	display: inline; 
-	padding: 0;
-	margin: 0;
-} 
-
-#nav a { 
-	position: relative;
-	top: 3px;
-	float:left; 
-	width:auto; 
-	padding: 8px 10px 6px 10px;
-	margin: 3px 3px 0;
-	border: 1px solid gray; 
-	border-width: 2px 2px 3px 2px;
-
-	color: black; 
-	background-color: silver; 
-	text-decoration:none; 
-	text-transform: uppercase;
-}
-
-#nav a:hover { 
-	margin-top: 1px;
-	padding-top: 9px;
-	padding-bottom: 7px;
-	color: blue;
-	background-color: gainsboro;
-} 
-
-#nav a.current:link,
-#nav a.current:visited,
-#nav a.current:hover {
-	background: white; 
-	color: black; 
-	text-shadow:none; 
-	margin-top: 0;
-	padding-top: 11px;
-	padding-bottom: 9px;
-	border-bottom-width: 0;
-	border-color: red; 
-}
-
-#nav a:active { 
-	background-color: silver; 
-	color: white;
-} 
-
-
-
-/**
-=========================================
-	Content
-=========================================
-*/
-#header {
-	margin: 0;
-	padding: .5em 4em;
-	color: white;
-	background-color: red;
-	border: 1px solid darkred;
-}
-
-#content {
-	margin: 0;
-	padding: 0 2em .5em;
-}
-
-#footer {
-	clear: both;
-	margin: 0;
-	padding: .5em 2em;
-	color: gray;
-	background-color: gainsboro;
-	font-size: 80%;
-	border-top: 1px dotted gray;
-	text-align: right
-}
-
-.single_column {
-	padding: 10px 10px 10px 10px;
-	/*margin: 0px 33% 0px 0px; */
-	margin: 3px 0;
-}
-
-#flexi_column {
-	padding: 10px 10px 10px 10px;
-	/*margin: 0px 33% 0px 0px; */
-	margin: 0px 212px 0px 0px;
-}
-
-#fix_column {
-	float: right;
-	padding: 10px 10px 10px 10px;
-	margin: 0px;
-	width: 205px;
-	/*width: 30%; */
-	voice-family: "\"}\"";
-	voice-family:inherit;
-	/* width: 30%; */
-	width: 205px;
-}
-html&gt;body #rightColumn {
-	width: 205px; /* ie5win fudge ends */
-} /* Opera5.02 shows a 2px gap between. N6.01Win sometimes does.
-	Depends on amount of fill and window size and wind direction. */
-
-/**
-=========================================
-	Label / value
-=========================================
-*/
-
-.page {
-	border-bottom: 3px dotted navy;
-	margin: 0;
-	padding: 10px 0 20px 0;
-}
-
-.value, .label {
-	margin: 0;
-	padding: 0;
-}
-
-.label {
-	float: left;
-	width: 140px;
-	text-align: right;
-	font-weight: bold;
-	padding-bottom: .5em;
-	margin-right: 0;
-	color: darkblue;
-}
-
-.value {
-	margin-left: 147px;
-	color: darkblue;
-	padding-bottom: .5em;
-}
-
-strong, strong a {
-	color: darkblue;
-	font-weight: bold;
-	letter-spacing: 1px;
-	margin-left: 2px;
-}
-
-
-/**
-=========================================
-	Links
-=========================================
-*/
-
-a.local:link,
-a.local:visited {
-	color: blue; 
-	margin-left: 10px;
-	border-bottom: 1px dotted blue;
-	text-decoration: none;
-	font-style: italic;
-}
-
-a.local:hover {
-	background-color: gainsboro; 
-	color: darkblue;
-	padding-bottom: 1px;
-	border-bottom: 1px solid darkblue;
-}
-
-a.target:link,
-a.target:visited,
-a.target:hover
-{
-	text-decoration: none;
-	background-color: transparent;
-	border-bottom-type: none;
-}
-
-/**
-=========================================
-	Box, Shadow
-=========================================
-*/
-
-.box {
-	padding: 6px;
-	color: black;
-	background-color: gainsboro;
-	border: 1px solid gray;
-}
-
-.shadow {
-	background: silver;
-	position: relative;
-	top: 5px;
-	left: 4px;
-}
-
-.shadow div {
-	position: relative;
-	top: -5px;
-	left: -4px;
-}
-
-/**
-=========================================
-	Floatcontainer
-=========================================
-*/
-
-.spacer
-{
-	display: block;
-	height: 0;
-	font-size: 0;
-	line-height: 0;
-	margin: 0;
-	padding: 0;
-	border-style: none;
-	clear: both; 
-	visibility:hidden;
-}
-
-.floatcontainer:after {
-	content: ".";
-	display: block;
-	height: 0;
-	font-size:0; 
-	clear: both;
-	visibility:hidden;
-}
-.floatcontainer{
-	display: inline-table;
-} /* Mark Hadley's fix for IE Mac */ /* Hides from IE Mac \*/ * 
-html .floatcontainer {
-	height: 1%;
-}
-.floatcontainer{
-	display:block;
-} /* End Hack 
-*/ 
-
-/**
-=========================================
-	Source code
-=========================================
-*/
-
-.indent {
-	margin: 2px 0 2px 20px;
-}
-
-.xml-element, .xml-proc, .xml-comment {
-	margin: 2px 0;
-	padding: 2px 0 2px 0;
-}
-
-.xml-element {
-	word-spacing: 3px;
-	color: red;
-	font-weight: bold;
-	font-style:normal;
-	border-left: 1px dotted silver;
-}
-
-.xml-element div {
-	margin: 2px 0 2px 40px;
-}
-
-.xml-att {
-	color: blue;
-	font-weight: bold;
-}
-
-.xml-att-val {
-	color: blue;
-	font-weight: normal;
-}
-
-.xml-proc {
-	color: darkred;
-	font-weight: normal;
-	font-style: italic;
-}
-
-.xml-comment {
-	color: green;
-	font-weight: normal;
-	font-style: italic;
-}
-
-.xml-text {
-	color: green;
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-/**
-=========================================
-	Heading
-=========================================
-*/
-h1, h2, h3 {
-	margin: 10px 10px 2px;
-	font-family: Georgia, Times New Roman, Times, Serif;
-	font-weight: normal;
-	}
-
-h1 {
-	font-weight: bold;
-	letter-spacing: 3px;
-	font-size: 220%;
-	line-height: 100%;
-}
-
-h2 {
-	font-weight: bold;
-	font-size: 175%;
-	line-height: 200%;
-}
-
-h3 {
-	font-size: 150%;
-	line-height: 150%;
-	font-style: italic;
-}
-
-/**
-=========================================
-	Content formatting
-=========================================
-*/
-.port {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px dashed gray;
-}
-
-.operation {
-	margin-bottom: 20px;
-	padding-bottom: 10px;
-	border-bottom: 1px dashed gray;
-}
-
-
-/* --------------------------------------------------------
-	Printing
-*/
-
-/*
-@media print
-{
-	#outer_links, #outer_nav { 
-		display: none;
-	}
-*/
-
-	#outer_box {
-		padding: 3px;
-	}
-/* END print media definition
-}
-*/
-
-</xsl:variable>
-
-   <!--
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    End of included transformation: wsdl-viewer-css.xsl
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
--->
-
-
-
 
 <!--
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -910,10 +379,10 @@ h3 {
             <xsl:text> </xsl:text>
             <small>
                <xsl:if test="$ENABLE-OPERATIONS-PARAGRAPH">
-                  <a class="local" href="#{concat($PORT-PREFIX, generate-id(.))}"> 
+                  <a class="local" href="#{concat($PORT-PREFIX, generate-id(.))}">
                      <xsl:value-of select="$PORT-TYPE-TEXT"/>
                   </a>
-               </xsl:if> 
+               </xsl:if>
                <xsl:call-template name="render.source-code-link"/>
             </small>
          </xsl:if>
@@ -976,10 +445,10 @@ h3 {
             <xsl:text> </xsl:text>
             <small>
                <xsl:if test="$ENABLE-OPERATIONS-PARAGRAPH">
-                  <a class="local" href="#{concat($PORT-PREFIX, generate-id($port-type))}"> 
+                  <a class="local" href="#{concat($PORT-PREFIX, generate-id($port-type))}">
                      <xsl:value-of select="$PORT-TYPE-TEXT"/>
                   </a>
-               </xsl:if> 
+               </xsl:if>
                <xsl:call-template name="render.source-code-link"/>
             </small>
          </xsl:if>
@@ -1019,7 +488,7 @@ h3 {
          <xsl:if test="$ENABLE-LINK">
 		          <xsl:if test="$ENABLE-OPERATIONS-PARAGRAPH">
                <a class="local" href="{concat('#', $OPERATIONS-PREFIX, generate-id(.))}">Detail</a>
-            </xsl:if> 
+            </xsl:if>
             <xsl:call-template name="render.source-code-link"/>
          </xsl:if>
 	     </li>
@@ -1077,8 +546,8 @@ h3 {
                <xsl:value-of select="$IFACE-TEXT"/>
                <xsl:text>
 </xsl:text>
-               <b> 
-                  <xsl:value-of select="@name"/> 
+               <b>
+                  <xsl:value-of select="@name"/>
                </b>
             </a>
 		          <xsl:call-template name="render.source-code-link"/>
@@ -1132,7 +601,7 @@ h3 {
 			         <xsl:variable name="type-name">
 				           <xsl:apply-templates select="@element" mode="qname.normalized"/>
 			         </xsl:variable>
-	
+
 			         <xsl:call-template name="render-type">
 				           <xsl:with-param name="type-local-name" select="$type-name"/>
 			         </xsl:call-template>
@@ -1156,8 +625,8 @@ h3 {
                   <xsl:value-of select="$PORT-TYPE-TEXT"/>
                   <xsl:text>
 </xsl:text>
-                  <b> 
-                     <xsl:value-of select="@name"/> 
+                  <b>
+                     <xsl:value-of select="@name"/>
                   </b>
                </a>
 	              <xsl:call-template name="render.source-code-link"/>
@@ -1205,7 +674,7 @@ h3 {
                   <xsl:value-of select="$binding-operation/@style"/>
                </div>
 		          </xsl:if>
-	
+
 		          <div class="label">Operation type:</div>
 		          <div class="value">
 		             <xsl:choose>
@@ -1220,14 +689,14 @@ h3 {
 			               <xsl:otherwise>unknown</xsl:otherwise>
 		             </xsl:choose>
 		          </div>
-	
+
 		          <xsl:if test="string-length($binding-operation/@soapAction) &gt; 0">
 			            <div class="label">SOAP action:</div>
 			            <div class="value">
                   <xsl:value-of select="$binding-operation/@soapAction"/>
                </div>
 		          </xsl:if>
-	
+
 		          <xsl:if test="$binding-operation/@location">
 			            <div class="label">HTTP path:</div>
 			            <div class="value">
@@ -1246,7 +715,7 @@ h3 {
 		       <div class="label">
             <xsl:value-of select="concat(translate(substring(local-name(.), 1, 1), 'abcdefghijklmnoprstuvwxyz', 'ABCDEFGHIJKLMNOPRSTUVWXYZ'), substring(local-name(.), 2), ':')"/>
          </div>
-	
+
 		       <xsl:variable name="msg-local-name" select="substring-after(@message, ':')"/>
 		       <xsl:variable name="msg-name">
 			         <xsl:choose>
@@ -1258,7 +727,7 @@ h3 {
                </xsl:otherwise>
 			         </xsl:choose>
 		       </xsl:variable>
-	
+
 		       <xsl:variable name="msg" select="$consolidated-wsdl/ws:message[@name = $msg-name]"/>
 		       <xsl:choose>
 			         <xsl:when test="$msg">
@@ -1545,18 +1014,18 @@ h3 {
             </xsl:variable>
 			         <xsl:variable name="elem-type"
                           select="$consolidated-xsd[generate-id() != generate-id(current()) and $type-name and @name=$type-name and contains(local-name(), 'Type')][1]"/>
-	
+
 			         <xsl:if test="$type-name != @name">
 				           <xsl:apply-templates select="$elem-type" mode="operations.message.part">
 					             <xsl:with-param name="anti.recursion" select="concat($anti.recursion, $recursion.label)"/>
 				           </xsl:apply-templates>
-	
+
 				           <xsl:if test="not($elem-type)">
 					             <xsl:call-template name="render-type">
 						               <xsl:with-param name="type-local-name" select="$type-name"/>
 					             </xsl:call-template>
 				           </xsl:if>
-		
+
 				           <xsl:apply-templates select="*" mode="operations.message.part">
 					             <xsl:with-param name="anti.recursion" select="concat($anti.recursion, $recursion.label)"/>
 				           </xsl:apply-templates>
@@ -1684,7 +1153,7 @@ h3 {
 				           <xsl:variable name="nillable">
                   <xsl:if test="@nillable">nillable</xsl:if>
                </xsl:variable>
-	
+
 				           <xsl:if test="(string-length($min) + string-length($max) + string-length($nillable) + string-length(@use)) &gt; 0">
 					             <xsl:text> - </xsl:text>
 					             <xsl:value-of select="$min"/>
@@ -2144,7 +1613,7 @@ h3 {
 					result of a namespace declaration.  Note that this doesn't reflect the actual
 					source - it will strip out redundant namespace declarations.
 				-->
-			<xsl:for-each select="namespace::*[. != 'http://www.w3.org/XML/1998/namespace']"> 
+			<xsl:for-each select="namespace::*[. != 'http://www.w3.org/XML/1998/namespace']">
 				           <xsl:if test="not($current/parent::*[namespace::*[. = current()]])">
 					             <div class="xml-att">
 						               <xsl:text> xmlns</xsl:text>
@@ -2158,14 +1627,14 @@ h3 {
 			         </xsl:for-each>
 		       </xsl:when>
 		       <xsl:otherwise>
-			<!-- 
+			<!--
 				When the namespace axis isn't supported (e.g. Mozilla), we can simulate
 				appropriate declarations from namespace elements.
 				This currently doesn't check for namespaces on attributes.
 				In the general case we can't reliably detect the use of QNames in content, but
 				in the case of schema, we know which content could contain a QName and look
 				there too.  This mechanism is rather unpleasant though, since it records
-				namespaces where they are used rather than showing where they are declared 
+				namespaces where they are used rather than showing where they are declared
 				(on some parent element) in the source.  Yukk!
 			-->
 			<xsl:if test="namespace-uri(.) != namespace-uri(parent::*) or not(parent::*)">
@@ -2223,46 +1692,8 @@ h3 {
 -->
 
 <xsl:template match="/">
-	     <html>
-		       <xsl:call-template name="head.render"/>
-		       <xsl:call-template name="body.render"/>
-	     </html>
-   </xsl:template>
-
-
-
-   <!--
-==================================================================
-	Rendering: HTML head
-==================================================================
--->
-
-<xsl:template name="head.render">
-      <head>
-	        <title>
-            <xsl:value-of select="concat($html-title, ' - ', 'Generated by wsdl-viewer.xsl')"/>
-         </title>
-	        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	        <meta http-equiv="content-script-type" content="text/javascript"/>
-	        <meta http-equiv="content-style-type" content="text/css"/>
-	        <meta name="Generator" content="http://tomi.vanek.sk/xml/wsdl-viewer.xsl"/>
-
-	        <meta http-equiv="imagetoolbar" content="false"/>
-	        <meta name="MSSmartTagsPreventParsing" content="true"/>
-
-	        <style type="text/css">
-            <xsl:value-of select="$css" disable-output-escaping="yes"/>
-         </style>
-
-	        <script src="wsdl-viewer.js" type="text/javascript" language="javascript"> 
-            <xsl:comment>
-               <xsl:text>
-	// </xsl:text>
-            </xsl:comment>
-	        </script>
-      </head>
-   </xsl:template>
-
+   <xsl:call-template name="body.render"/>
+</xsl:template>
 
 
    <!--
@@ -2400,7 +1831,7 @@ h3 {
 	        <xsl:apply-templates select="$consolidated-wsdl/ws:service|$consolidated-wsdl/ws2:service"
                               mode="service-start"/>
 	        <xsl:if test="not($consolidated-wsdl/*[local-name() = 'service']/@name)">
-		
+
 
 <!-- If the WS is without implementation, just with binding points = WS interface -->
 
@@ -2440,14 +1871,14 @@ h3 {
 				              </xsl:apply-templates>
 			            </xsl:when>
 			            <xsl:when test="$consolidated-wsdl/ws2:interface/@name">
-				
+
 
 <!-- TODO: What to do if there are more interfaces? -->
 
 				<xsl:apply-templates select="$consolidated-wsdl/ws2:interface[1]" mode="operations"/>
 			            </xsl:when>
 			            <xsl:otherwise>
-				
+
 
 <!-- TODO: Error message or handling somehow this unexpected situation -->
 
@@ -2466,7 +1897,7 @@ h3 {
 -->
 
 <xsl:template name="src.render">
-      <div class="page">
+      <div class="page src">
 	        <a class="target" name="page.src">
 		          <h2>WSDL source code</h2>
 	        </a>
@@ -2506,7 +1937,7 @@ h3 {
 		                </div>
                </div>
 		          </div>
-	
+
 		          <div id="flexi_column">
 			            <xsl:call-template name="about.detail">
 				              <xsl:with-param name="version" select="$wsdl-viewer.version"/>

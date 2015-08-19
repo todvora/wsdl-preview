@@ -1,0 +1,12 @@
+{
+  "title": "WSDL Browser",
+  "name": "wsdl-browser",
+  "version": "0.0.1",
+  "description": "Displays WSDLs in a human readable form",
+  "main": "index.js",
+  "author": "Tomas Dvorak <todvora@gmail.com>",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "Apache version 2.0"
+}
