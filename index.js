@@ -1,33 +1,8 @@
+'use strict';
+
 var buttons = require('sdk/ui/button/action');
 var self = require('sdk/self');
 var tabs = require('sdk/tabs');
-
-var button = buttons.ActionButton({
-  id: 'wsdl-browser-button',
-  label: 'Open WSDL Browser',
-  icon: {
-    '16': './icon-16.png',
-    '32': './icon-32.png',
-    '64': './icon-64.png'
-  },
-  onClick: onButtonClick
-});
-
-function onButtonClick() {
-  tabs.activeTab.attach({
-    contentScript: 'self.postMessage((new XMLSerializer()).serializeToString(document));',
-    onMessage: onWsdlRead
-  });
-}
-
-function onWsdlRead(wsdlContent) {
-  tabs.open({
-    url: self.data.url('wsdl-browser.html'),
-    onReady: function(tab) {
-      onNewTabReady(tab, wsdlContent);
-    }
-  });
-}
 
 function onNewTabReady(tab, wsdlContent) {
   var transformation = self.data.load('wsdl-viewer.xsl');
@@ -41,3 +16,30 @@ function onNewTabReady(tab, wsdlContent) {
     }
   });
 }
+
+function onWsdlRead(wsdlContent) {
+  tabs.open({
+    url: self.data.url('wsdl-browser.html'),
+    onReady: function(tab) {
+      onNewTabReady(tab, wsdlContent);
+    }
+  });
+}
+
+function onButtonClick() {
+  tabs.activeTab.attach({
+    contentScriptFile: self.data.url('readpage.js'),
+    onMessage: onWsdlRead
+  });
+}
+
+buttons.ActionButton({
+  id: 'wsdl-browser-button',
+  label: 'Open WSDL Browser',
+  icon: {
+    '16': './icon-16.png',
+    '32': './icon-32.png',
+    '64': './icon-64.png'
+  },
+  onClick: onButtonClick
+});
