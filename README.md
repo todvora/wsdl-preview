@@ -1,6 +1,8 @@
 # WSDL Preview
 Firefox plugin to display [WSDL](https://en.wikipedia.org/wiki/Web_Services_Description_Language) files in a human readable form.
 
+Install from **[addons.mozilla.org/cs/firefox/addon/wsdl-preview](https://addons.mozilla.org/cs/firefox/addon/wsdl-preview)**.
+
 ## What is WSDL
 WSDL file is XML descriptor of a web service. It describes all available methods and their
 data types, restrictions, possible values.

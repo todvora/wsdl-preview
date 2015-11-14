@@ -19,7 +19,7 @@ function onNewTabReady(tab, wsdlContent) {
 
 function onWsdlRead(wsdlContent) {
   tabs.open({
-    url: self.data.url('wsdl-browser.html'),
+    url: self.data.url('wsdl-preview.html'),
     onReady: function(tab) {
       onNewTabReady(tab, wsdlContent);
     }
