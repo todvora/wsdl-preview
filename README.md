@@ -9,7 +9,7 @@ But XML used to describe computer-computer communication is often very hard to r
 The WSDL browser plugin tries to solve this issue by providing human-readable view.
 
 ## XSLT Transformation
-The WSDL -> HTML transformation is based on excellent [WSDL viewer](http://tomi.vanek.sk/index.php?page=wsdl-viewer)
+The WSDL -> HTML transformation is based on excellent [WSDL viewer](http://tomi.vanek.sk/index.php?page=wsdl-preview)
 project (Apache 2.0 licence) by [Tomi Vanek](https://twitter.com/tomivanek1). There are some
 minor modifications due to the nature of this Firefox plugin (extracted styles) and due
 to formatting of results page (added css ids and classes).
@@ -24,12 +24,12 @@ It only reads the WSDL and displays it in another tab.
 
 ## Screenshots
 
-![Transformed WSDL](https://raw.github.com/todvora/wsdl-viewer/master/screenshots/transformed-operation-details.png)
+![Transformed WSDL](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-operation-details.png)
 
-- [Raw WSDL displayed in browser](https://raw.github.com/todvora/wsdl-viewer/master/screenshots/raw-wsdl.png)
-- [Transformation applied](https://raw.github.com/todvora/wsdl-viewer/master/screenshots/transformed-wsdl.png)
-- [Operation details](https://raw.github.com/todvora/wsdl-viewer/master/screenshots/transformed-operation-details.png)
-- [Print preview](https://raw.github.com/todvora/wsdl-viewer/master/screenshots/print-preview.png)
+- [Raw WSDL displayed in browser](https://raw.github.com/todvora/wsdl-preview/master/screenshots/raw-wsdl.png)
+- [Transformation applied](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-wsdl.png)
+- [Operation details](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-operation-details.png)
+- [Print preview](https://raw.github.com/todvora/wsdl-preview/master/screenshots/print-preview.png)
 
 ## Licence
 [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)

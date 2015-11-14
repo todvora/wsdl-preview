@@ -5,6 +5,14 @@
   "description": "Displays WSDLs in a human readable form. Printer friendly.",
   "main": "index.js",
   "author": "Tomas Dvorak <todvora@gmail.com>",
+  "homepage": "https://github.com/todvora/wsdl-preview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/todvora/wsdl-preview.git"
+  },
+  "bugs": {
+    "url": "https://github.com/todvora/wsdl-preview/issues"
+  },
   "engines": {
     "firefox": ">=38.0a1"
   },
