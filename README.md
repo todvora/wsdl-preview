@@ -15,7 +15,7 @@ minor modifications due to the nature of this Firefox plugin (extracted styles) 
 to formatting of results page (added CSS ids and classes).
 
 ## Usage
-This plugin adds icon [![Transformed WSDL](https://raw.github.com/todvora/wsdl-preview/master/data/icon-16.png)] to your browser menu bar. Navigate to a site with WSDL document and press this icon. New tab will be opened with a human readable preview of WSDL. You can also easily print this page.
+This plugin adds icon ```</>``` to your browser menu bar. Navigate to a site with WSDL document and press this icon. New tab will be opened with a human readable preview of WSDL. You can also easily print this page.
 
 ## Screenshots
 
