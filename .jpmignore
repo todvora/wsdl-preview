@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+screenshots/
+.git/
+./travis.yml
+.jshintrc
