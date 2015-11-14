@@ -19,11 +19,13 @@ This plugin adds icon [![Transformed WSDL](https://raw.github.com/todvora/wsdl-p
 
 ## Screenshots
 
+Before transformation:
+![Before transformation WSDL](https://raw.github.com/todvora/wsdl-preview/master/screenshots/raw-wsdl.png)
+
+After transformation:
 ![Transformed WSDL](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-operation-details.png)
 
-- [Raw WSDL displayed in browser](https://raw.github.com/todvora/wsdl-preview/master/screenshots/raw-wsdl.png)
-- [Transformation applied](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-wsdl.png)
-- [Operation details](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-operation-details.png)
+- [Methods overview](https://raw.github.com/todvora/wsdl-preview/master/screenshots/transformed-wsdl.png)
 - [Print preview](https://raw.github.com/todvora/wsdl-preview/master/screenshots/print-preview.png)
 
 ## Example WSDLs to test
