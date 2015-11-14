@@ -4,5 +4,8 @@ screenshots/
 .git/
 test/
 .travis.yml
+.jpmignore
 .jshintrc
+.gitignore
+README.md
 *.xpi

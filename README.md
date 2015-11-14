@@ -9,7 +9,7 @@ But XML used to describe computer-computer communication is often very hard to r
 The WSDL browser plugin tries to solve this issue by providing human-readable view.
 
 ## XSLT Transformation
-The WSDL -> HTML transformation is based on excellent [WSDL viewer](http://tomi.vanek.sk/index.php?page=wsdl-preview)
+The WSDL -> HTML transformation is based on excellent [WSDL viewer](http://tomi.vanek.sk/index.php?page=wsdl-viewer)
 project (Apache 2.0 licence) by [Tomi Vanek](https://twitter.com/tomivanek1). There are some
 minor modifications due to the nature of this Firefox plugin (extracted styles) and due
 to formatting of results page (added CSS ids and classes).
