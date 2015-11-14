@@ -1,8 +1,8 @@
 {
-  "title": "WSDL Browser",
-  "name": "wsdl-browser",
+  "title": "WSDL Preview",
+  "name": "wsdl-preview",
   "version": "0.0.1",
-  "description": "Displays WSDLs in a human readable form",
+  "description": "Displays WSDLs in a human readable form. Printer friendly.",
   "main": "index.js",
   "author": "Tomas Dvorak <todvora@gmail.com>",
   "engines": {
@@ -11,7 +11,8 @@
   "license": "Apache version 2.0",
   "scripts": {
     "lint": "jshint index.js",
-    "start": "jpm run -b /usr/bin/firefox"
+    "start": "jpm run -b /usr/bin/firefox",
+    "test": "jpm test -b /usr/bin/firefox"
   },
   "devDependencies": {
     "jshint": ">=2.6.3",

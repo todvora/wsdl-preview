@@ -437,5 +437,5 @@ h3 {
    #header {display: none;}
    .page > ul, ul ol {padding-left: 0px; list-style-position: inside;}
    .value ol {clear:both;}
-    .box {page-break-inside: avoid; margin: 10px 0;}
+   .box {margin: 10px 0;}
 }
